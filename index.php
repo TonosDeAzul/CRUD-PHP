@@ -22,29 +22,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-<?php
-// include_once("aprendiz.php");
-
-// $juan = new Aprendiz();
-
-// var_dump(($juan));
-
-// // $juan = new Persona();
-// // $juan->setNombre("JUAN");
-// // $juan->setApellido("BARRERA");
-// // $juan->setGenero("MASCULINO");
-// // $juan->setedad(23);
-// // var_dump(($juan));
-
-
-?>

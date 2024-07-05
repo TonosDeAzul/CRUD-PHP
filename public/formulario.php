@@ -1,4 +1,4 @@
-<form action="controlador.php" method="POST">
+<form action="controladores/controlador.php" method="POST">
   <div>
     <label for="nombre">Nombre</label>
     <input type="text" id="Nombre" name="nombre">
@@ -15,7 +15,7 @@
   </div>
   <div>
     <label for="Edad">Edad</label>
-    <input type="number" id="edad" name="edad">
+    <input type="text" id="edad" name="edad">
   </div>
   <button type="submit">Enviar</button>
 </form>

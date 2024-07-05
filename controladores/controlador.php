@@ -1,5 +1,5 @@
 <?php
-require_once("aprendiz.php");
+  require __DIR__ . "/../clases/aprendiz.php";
 
   if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -24,7 +24,7 @@ require_once("aprendiz.php");
     $aprendiz->setEdad($edad);
     $aprendiz->Guardar();
 
-    header("Location: index.php");
+    header("Location: ../index.php");
   }
 
   if ($_SERVER['REQUEST_METHOD'] == "GET") {
@@ -32,28 +32,7 @@ require_once("aprendiz.php");
     $aprendiz = new Aprendiz();
     $aprendiz->setId($id);
     $aprendiz->Eliminar();
-    header("Location: index.php");
-    // echo $id;
+    header("Location: ../index.php");
   }
-
-
-  // if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  //   $nombre = $_POST["nombre"];
-  //   $apellido = $_POST["apellido"];
-  //   $genero = $_POST["genero"];
-  //   $edad = $_POST["edad"];
-
-  //   require_once("aprendiz.php");
-  //   $aprendiz = new Aprendiz();
-  //   $aprendiz->setNombre($nombre);
-  //   $aprendiz->setApellido($apellido);
-  //   $aprendiz->setGenero($genero);
-  //   $aprendiz->setEdad($edad);
-
-  //   $aprendiz->Guardar();
-    
-  // }
-
-
 
 

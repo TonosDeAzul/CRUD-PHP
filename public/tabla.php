@@ -1,10 +1,10 @@
 <?php
 // Puedes usar __DIR__ para obtener el directorio actual del script y luego navegar a la ubicación deseada
-require __DIR__ . '/../aprendiz.php';
+require __DIR__ . "/../clases/aprendiz.php";
 $aprendiz = new Aprendiz();
 
 $personas = $aprendiz->listar();
-var_dump($personas);
+// var_dump($personas);
 ?>
 
 <table>
@@ -27,9 +27,13 @@ var_dump($personas);
           <td><?php echo $value["genero"] ?></td>
           <td><?php echo $value["edad"] ?></td>
           <td>
-            <form action="controlador.php" method="GET">
+            <form action="controladores/controlador.php" method="GET">
               <input type="hidden" value="<?php echo $value["id"] ?>" name="id">
               <button>Eliminar</button>
+            </form>
+            <form action="controladores/editar.php" method="GET">
+              <input type="hidden" value="<?php echo $value["id"] ?>" name="id">
+              <button>Editar</button>
             </form>
           </td>
         </tr>

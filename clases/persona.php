@@ -1,7 +1,7 @@
 
 <?php
 
-  require __DIR__ . "/database.php";
+  require __DIR__ . "/../libs/database.php";
 
   class Persona{
     protected $id;
@@ -56,7 +56,6 @@
   }
   
   //Metodos
-  
   public function Guardar(){
     $sql = "INSERT INTO aprendiz(nombre, apellido, genero, edad) VALUES (:nombre, :apellido, :genero, :edad)";
     $stm = $this->connection->prepare($sql);
@@ -80,6 +79,24 @@
     $stm->bindParam(":id", $this->id);
     $stm->execute();
   }
+
+  public function Editar(){
+    $sql = "UPDATE aprendiz SET nombre = :nombre, apellido = :apellido, genero = :genero, edad = :edad";
+    $stm = $this->connection->prepare($sql);
+    $stm->bindParam(":nombre", $this->nombre);
+    $stm->bindParam(":apellido", $this->apellido);
+    $stm->bindParam(":genero", $this->genero);
+    $stm->bindParam(":edad", $this->edad);
+    $stm->execute();
+  }
   
+  public function buscarPorId(){
+    $sql = "SELECT * FROM aprendiz WHERE id = :id";
+    $stm = $this->connection->prepare($sql);
+    $stm->bindParam(":id", $this->id);
+    $stm->execute();
+    return $stm->fetchAll();
+  }
+
 }
 ?>
